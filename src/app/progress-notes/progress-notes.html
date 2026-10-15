@@ -1,0 +1,67 @@
+<h2>Progress Notes</h2>
+
+<p>Enter the project information and provide a progress update.</p>
+
+<form [formGroup]="progressNotesForm">
+
+  <div>
+    <label for="projectName">Project Name:</label>
+    <input
+      type="text"
+      id="projectName"
+      formControlName="projectName"
+      placeholder="Enter project name">
+  </div>
+
+  <br>
+
+  <div>
+    <label for="date">Date:</label>
+    <input
+      type="date"
+      id="date"
+      formControlName="date">
+  </div>
+
+  <br>
+
+  <div>
+    <label for="currentStatus">Current Status:</label>
+    <select
+      id="currentStatus"
+      formControlName="currentStatus">
+
+      <option value="On Track">On Track</option>
+      <option value="Needs Attention">Needs Attention</option>
+      <option value="Completed">Completed</option>
+
+    </select>
+  </div>
+
+  <br>
+
+  <div>
+    <label for="teamMember">Team Member:</label>
+    <input
+      type="text"
+      id="teamMember"
+      formControlName="teamMember"
+      placeholder="Enter team member name">
+  </div>
+
+  <br>
+
+  <div>
+    <label for="progressNote">Progress Note:</label>
+    <textarea
+      id="progressNote"
+      formControlName="progressNote"
+      rows="4"
+      placeholder="Enter your progress note"></textarea>
+  </div>
+
+</form>
+
+<h3>Current Form Values</h3>
+
+<pre>{{ progressNotesForm.value | json }}</pre>
