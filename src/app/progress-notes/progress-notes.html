@@ -4,60 +4,96 @@
 
 <form [formGroup]="progressNotesForm">
 
+  <!-- Project Code -->
+  <div>
+    <label for="projectCode">Project Code:</label>
+
+    <input
+      type="text"
+      id="projectCode"
+      formControlName="projectCode"
+      placeholder="Enter project code"
+      (blur)="updateProjectName()"
+    >
+
+    <p
+      *ngIf="projectCodeError"
+      style="color: red;"
+    >
+      {{ projectCodeError }}
+    </p>
+  </div>
+
+  <br>
+
+  <!-- Project Name -->
   <div>
     <label for="projectName">Project Name:</label>
+
     <input
       type="text"
       id="projectName"
       formControlName="projectName"
-      placeholder="Enter project name">
+      placeholder="Project name will appear here"
+      readonly
+    >
   </div>
 
   <br>
 
+  <!-- Date -->
   <div>
     <label for="date">Date:</label>
+
     <input
       type="date"
       id="date"
-      formControlName="date">
+      formControlName="date"
+    >
   </div>
 
   <br>
 
+  <!-- Current Status -->
   <div>
     <label for="currentStatus">Current Status:</label>
+
     <select
       id="currentStatus"
-      formControlName="currentStatus">
-
+      formControlName="currentStatus"
+    >
       <option value="On Track">On Track</option>
       <option value="Needs Attention">Needs Attention</option>
       <option value="Completed">Completed</option>
-
     </select>
   </div>
 
   <br>
 
+  <!-- Team Member -->
   <div>
     <label for="teamMember">Team Member:</label>
+
     <input
       type="text"
       id="teamMember"
       formControlName="teamMember"
-      placeholder="Enter team member name">
+      placeholder="Enter team member name"
+    >
   </div>
 
   <br>
 
+  <!-- Progress Note -->
   <div>
     <label for="progressNote">Progress Note:</label>
+
     <textarea
       id="progressNote"
       formControlName="progressNote"
       rows="4"
-      placeholder="Enter your progress note"></textarea>
+      placeholder="Enter your progress note"
+    ></textarea>
   </div>
 
 </form>
